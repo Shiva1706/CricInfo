@@ -1,0 +1,51 @@
+<div class="table-container">
+    <h1 class="text-3xl font-semibold text-slate-500 ">{{tableHeading}} </h1>
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-4">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-300">
+            <thead class="text-xs uppercase bg-slate-700 text-slate-400 ">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Teams
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Match
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Won
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Lost
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Tied
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        NR
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Pts
+                    </th>
+                    <th scope="col" class="px-8 py-3">
+                        NRR
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (team of pointTable; track $index) {
+                    <tr class="border-b bg-slate-500 border-gray-700 hover:bg-slate-600 hover:font-semibold transition-all cursor-pointer">
+                    
+                    @if ($index>1 ) {
+                        @for (data of team; track $index) {
+                            <td class="px-6 py-4">
+                                {{data}}
+                            </td>
+                        }
+                    }
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

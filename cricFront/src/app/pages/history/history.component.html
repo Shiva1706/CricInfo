@@ -1,0 +1,15 @@
+<div class="">
+    <h1 class="text-3xl font-semibold text-slate-500 " >Previous Cricket Matches</h1>
+
+    <div class="items-stretch card-container flex flex-wrap flex-col md:flex-row ">
+        @for (match of allMatch; track $index) {
+
+            <div class="p-2 md:w-[33%] w-full " >
+                <app-match-card [match]="match" />
+            </div>
+            <br>
+        }@empty {
+            There is no match
+        }
+    </div>
+</div>
